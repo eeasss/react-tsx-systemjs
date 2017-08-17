@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <script src="node_modules/systemjs/dist/system.js"></script>
+  <script type="text/javascript">
+        System.config({
+            baseURL: "/",
+            transpiler: "ts",
+            typescriptOptions: {
+                "jsx": "react"
+            },
+            packages: {
+                "typescript": {
+                    "main": "lib/typescript.js",
+                    "meta": {
+                        "lib/typescript.js": {
+                            "exports": "ts"
+                        }
+                    }
+                }
+            },
+
+            map: {
+                "typescript": "node_modules/typescript",
+                "ts": "node_modules/plugin-typescript/lib/plugin.js",
+                "react": "node_modules/react/dist/react.js",
+                "react-dom": "node_modules/react-dom/dist/react-dom.js"
+            }
+        });
+
+    System.import("main.tsx");
+    </script>
+    <root></root>
+</body>
+</html>

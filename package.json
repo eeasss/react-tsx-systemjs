@@ -1,0 +1,27 @@
+{
+  "name": "react-tsx-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "systemjs": "^0.20.17",
+    "typescript": "^2.4.2"
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  },
+  "jspm": {
+    "dependencies": {
+      "ts": "github:frankwallis/plugin-typescript@^7.1.0"
+    },
+    "devDependencies": {}
+  }
+}
