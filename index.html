@@ -10,9 +10,11 @@
         System.config({
             baseURL: "/",
             transpiler: "ts",
+
             typescriptOptions: {
                 "jsx": "react"
             },
+
             packages: {
                 "typescript": {
                     "main": "lib/typescript.js",
@@ -20,7 +22,11 @@
                         "lib/typescript.js": {
                             "exports": "ts"
                         }
-                    }
+                    },
+                },
+                "@progress/kendo-react-animation": {
+                    main: "kendo-react-animation/dist/npm/main.js",
+                    defaultExtension: "js"
                 }
             },
 
@@ -28,9 +34,17 @@
                 "typescript": "node_modules/typescript",
                 "ts": "node_modules/plugin-typescript/lib/plugin.js",
                 "react": "node_modules/react/dist/react.js",
-                "react-dom": "node_modules/react-dom/dist/react-dom.js"
+                "react-dom": "node_modules/react-dom/dist/react-dom.js",
+                "react-transition-group": "node_modules/react-transition-group/dist/react-transition-group.js",
+                "@progress/kendo-react-animation": "node_modules/@progress/",
+
+                "classnames": "https://unpkg.com/classnames",
+                "object-assign": "https://unpkg.com/object-assign",
+                "raf": "https://unpkg.com/raf",
+                "performance-now": "https://unpkg.com/performance-now"
             }
         });
+
 
     System.import("main.tsx");
     </script>

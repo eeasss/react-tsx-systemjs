@@ -1,8 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app';
+import { Fade, Expand } from '@progress/kendo-react-animation';
+
+class App extends React.Component<any, any> {
+    constructor(props) {
+        super(props);
+
+        this.state = { index: 1 };
+    }
+
+    onClick = () => {
+        this.setState({
+            index: this.state.index + 1
+        });
+    }
+
+    render() {
+        const { index } = this.state;
+
+        return (
+            <div>
+                <dl>
+                    <dt>
+                        Fade:
+                    </dt>
+                    <dd>
+                        <button onClick={this.onClick}>Animate</button>
+                    </dd>
+                </dl>
+
+                <Fade>
+                    <div className="content" key={index}>{index}</div>
+                </Fade>
+            </div>
+        );
+    }
+}
 
 ReactDOM.render(
-    <div>foo</div>,
+    <App />,
     document.querySelector("root")
 );
