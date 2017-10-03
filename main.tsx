@@ -1,45 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Expand, Fade } from '@progress/kendo-react-animation';
+import { Slide } from '@progress/kendo-react-animation';
 
 class App extends React.Component {
     constructor(props) {
-        super(props);
+      super(props);
 
-        this.state = { index: 1 };
+      this.state = { show: false };
+
+      this.onClick = this.onClick.bind(this);
     }
 
-    onClick = () => {
+    onClick() {
         this.setState({
-            index: this.state.index + 1
+            show: !this.state.show
         });
     }
 
     render() {
-        const { index } = this.state;
+        const { show } = this.state;
 
-        return (
-            <div>
-                <dl>
-                    <dt>
-                        Fade:
-                    </dt>
-                    <dd>
-                        <button onClick={this.onClick}>Animate</button>
-                    </dd>
-                </dl>
+        const children = show ?
+          (React.createElement('div', {className: "wrapper"}, null)) : null;
 
-                <Fade>
-                    <div className="content" key={index}>{index}</div>
-                </Fade>
-            </div>
-        );
+        return React.createElement('div', {}, [
+            React.createElement('dl', {key: 1},
+              React.createElement('dt', {},
+                React.createElement('button', {onClick: this.onClick}, 'Animate')),
+            ),
+            React.createElement(Slide, {key: 2}, children)
+        ]);
     }
-}
-
-alert('foo');
+};
 
 ReactDOM.render(
-    <App />,
-    document.querySelector('root')
+  React.createElement(App, null),
+  document.querySelector('root')
 );
