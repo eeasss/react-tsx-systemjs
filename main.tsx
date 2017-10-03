@@ -37,6 +37,8 @@ class App extends React.Component {
     }
 }
 
+alert('foo');
+
 ReactDOM.render(
     <App />,
     document.querySelector('root')

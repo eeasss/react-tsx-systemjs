@@ -5,6 +5,7 @@
   <meta charset="utf-8">
 </head>
 <body>
+  <script src="https://unpkg.com/core-js@2.5.1/client/shim.min.js"></script>
   <script src="node_modules/systemjs/dist/system.js"></script>
   <script type="text/javascript">
         System.config({
@@ -15,9 +16,13 @@
             },
 
             packages: {
+                "app": {
+                    main: "./../main.tsx",
+                    defaultExtension: "tsx"
+                },
                 "typescript": {
-                    "main": "lib/typescript.js",
-                    "meta": {
+                    main: "lib/typescript.js",
+                    meta: {
                         "lib/typescript.js": {
                             "exports": "ts"
                         }
@@ -41,14 +46,15 @@
                 "object-assign": "https://unpkg.com/object-assign",
                 "raf": "https://unpkg.com/raf",
                 "performance-now": "https://unpkg.com/performance-now",
-                "prop-types": "https://unpkg.com/prop-types",
+                "prop-types": "https://unpkg.com/prop-types@15.6.0/prop-types.js",
                 "dom-helpers": "https://unpkg.com/dom-helpers",
             }
         });
 
 
-    System.import("main.tsx");
+    System.import("app");
     </script>
+    Foo
     <root></root>
 </body>
 </html>
