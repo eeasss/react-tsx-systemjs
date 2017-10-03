@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Fade, Expand } from '@progress/kendo-react-animation';
+import { Expand, Fade } from '@progress/kendo-react-animation';
 
-class App extends React.Component<any, any> {
+class App extends React.Component {
     constructor(props) {
         super(props);
 
@@ -39,5 +39,5 @@ class App extends React.Component<any, any> {
 
 ReactDOM.render(
     <App />,
-    document.querySelector("root")
+    document.querySelector('root')
 );

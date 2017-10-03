@@ -16,7 +16,9 @@
     "typescript": "^2.4.2"
   },
   "devDependencies": {
-    "lite-server": "^2.3.0"
+    "lite-server": "^2.3.0",
+    "plugin-typescript": "^7.1.0",
+    "react-transition-group": "^2.2.1"
   },
   "jspm": {
     "dependencies": {
